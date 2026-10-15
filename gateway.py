@@ -1,9 +1,11 @@
 
 import streamlit as st
-from prac import app
+from main import app
 
-# Create the Streamlit frontend
 streamlit_app = st.App("frontend.py")
 
-# Mount Streamlit on the FastAPI application
+# Initialize Streamlit's lifecycle with FastAPI
+app.router.lifespan_context = streamlit_app.lifespan()
+
+# Mount the frontend
 app.mount("/", streamlit_app)
