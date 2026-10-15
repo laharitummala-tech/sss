@@ -1,6 +1,6 @@
 
 import streamlit as st
-from main import app
+from prac import app
 
 streamlit_app = st.App("frontend.py")
 
