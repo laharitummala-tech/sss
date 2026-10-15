@@ -1,9 +1,9 @@
 
-import streamlit as st
+import os
 import requests
-import pandas as pd
+import streamlit as st
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = f"http://127.0.0.1:{os.environ.get('PORT', '8000')}"
 
 st.set_page_config(
     page_title="Student Management",
